@@ -16,6 +16,15 @@ public class Linked_List_demo {
 
 		
 		System.out.println(list);
+		System.out.println(list.getlength());
+		
+		list.deleteAtHead();
+		
+		System.out.println(list);
+		System.out.println(list.getlength());
+		
+		System.out.println(list.find(100));
+		System.out.println(list.find(12));
 		
 	}
 
