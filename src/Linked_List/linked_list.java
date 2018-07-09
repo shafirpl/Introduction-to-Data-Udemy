@@ -35,7 +35,7 @@ public class linked_list {
  }
 	@Override
 	public String toString() {
-		node current = head;
+		node current = this.head;
 		String result = "{";
 		while(current!=null) {
 		result = result + current.toString()+","+" ";

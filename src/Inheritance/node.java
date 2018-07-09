@@ -1,12 +1,12 @@
-package Linked_List;
+package Inheritance;
+
 
 public class node {
-
 	private node nextNode;
 	private int data;
 	
 	
-	 node(int data){
+	node(int data){
 		this.data = data;
 	}
 	
@@ -30,4 +30,5 @@ public class node {
 	public String toString() {
 		return ("Data:" + this.data);
 	}
+
 }
