@@ -33,6 +33,24 @@ public class linked_list {
 	 }
 	 return null;
  }
+ 
+ public void reverse() {
+	 node current = this.head;
+	 if(current==null) return;
+	 node prev = null;
+	 while(current!=null) {
+		 
+		 node next = current.getNextNode();
+		 current.setNextNode(prev);
+		 prev = current;
+		 current = next;
+		 System.out.println("prev Node: "+prev);
+		 System.out.println("current Node: "+current);
+		 
+	 }
+	 this.head = prev;
+	 System.out.println(this.head.getNextNode());
+ }
 	@Override
 	public String toString() {
 		node current = this.head;

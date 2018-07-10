@@ -1,0 +1,91 @@
+package Linked_List;
+
+public class doubly_linked_list{
+	private doubly_node head;
+	public void insertAtHead(int data) {
+		 doubly_node node = new doubly_node(data);
+		 if(this.head!=null) {
+			 node.setNextNode(this.head);
+			 this.head.setPrevNode(node); 
+		 }
+
+		 this.head = node;
+		 
+	 }
+	 
+	 public int getlength() {
+		 int length = 0;
+		 doubly_node current = this.head;
+		 while(current!=null) {
+			 length++;
+			 current = current.getNextNode();
+		 }
+		 return length;
+		 
+	 }
+	 
+	 public void deleteAtHead() {
+		 this.head.getNextNode().setPrevNode(null);
+		 this.head = this.head.getNextNode();
+	 }
+	 
+	 public doubly_node find(int data) {
+		 doubly_node current = this.head;
+		 while(current!=null) {
+			 if (current.getData() == data) return current;
+			 current = current.getNextNode();
+		 }
+		 return null;
+	 }
+	 
+	 public void printBackwards() {
+		 doubly_node current;
+		 String result="{";
+		 current = this.head;
+		 while(current.getNextNode()!=null) {
+			 current = current.getNextNode();
+		 }
+		 
+		 while(current!=null) {
+			 result = result + current.toString()+","+" ";
+			 current = current.getPrevNode();
+		 }
+		 result = result + "}";
+		 System.out.println(result);
+	 }
+	 
+	 public void reverse() {
+		 doubly_node current;
+		 current = this.head;
+		 while(current.getNextNode()!=null) {
+			 current = current.getNextNode();
+		 }
+		 this.head = current;
+		 
+		 while(current!=null) {
+			 doubly_node prev = current.getPrevNode();
+			 doubly_node next = current.getNextNode();
+			 
+			 current.setNextNode(prev);
+			 current.setPrevNode(next);
+			 
+			 current = prev;
+			 
+		 }
+		 //System.out.println(head.getNextNode());
+	 }
+		@Override
+		public String toString() {
+			doubly_node current = this.head;
+			String result = "{";
+			while(current!=null) {
+			result = result + current.toString()+","+" ";
+			current = current.getNextNode();
+			}
+			result = result+"}";
+			return result;
+		}
+	
+	
+
+}

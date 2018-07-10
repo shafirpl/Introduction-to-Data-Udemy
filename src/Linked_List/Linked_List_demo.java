@@ -26,6 +26,10 @@ public class Linked_List_demo {
 		System.out.println(list.find(100));
 		System.out.println(list.find(12));
 		
+		list.reverse();
+		
+		System.out.println(list);
+		
 	}
 
 }
