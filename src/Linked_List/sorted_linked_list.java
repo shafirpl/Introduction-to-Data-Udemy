@@ -29,6 +29,7 @@ public class sorted_linked_list {
 			if(newNode.getData()>=current.getNextNode().getData()) {
 				current = current.getNextNode();
 			}
+			else break;
 			
 			
 			

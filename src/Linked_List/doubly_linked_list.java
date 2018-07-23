@@ -72,8 +72,30 @@ public class doubly_linked_list{
 			 current = prev;
 			 
 		 }
-		 //System.out.println(head.getNextNode());
+		 
+		 
+			 
+		 
+		 //System.out.println(head.he());
 	 }
+	 
+	 
+	 	public void insertion_Sort() {
+	 		doubly_node current = this.head.getNextNode();
+	 		while(current!=null) {
+	 			int value = current.getData();
+	 			while(current.getPrevNode()!=null && current.getPrevNode().getData()>value) {
+	 				current.getPrevNode().setNextNode(current.getNextNode());
+	 				if(current.getNextNode()!=null) current.getNextNode().setPrevNode(current.getPrevNode());
+	 				current.setNextNode(current.getPrevNode());
+	 				current.setPrevNode(current.getPrevNode().getPrevNode());
+	 				if(current.getPrevNode()!=null) current.getPrevNode().setNextNode(current);
+	 				current.getNextNode().setPrevNode(current);
+	 			}
+	 			if(current.getPrevNode()==null) this.head = current;
+	 			current = current.getNextNode();
+	 		}
+	 	}
 		@Override
 		public String toString() {
 			doubly_node current = this.head;

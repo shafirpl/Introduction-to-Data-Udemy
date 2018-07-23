@@ -9,6 +9,7 @@ public class sorted_list_demo {
 		list.insert(5);
 		list.insert(1);
 		list.insert(20);
+		list.insert(15);
 		list.insert(20);
 		
 		System.out.println(list);

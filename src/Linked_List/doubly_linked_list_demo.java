@@ -19,9 +19,13 @@ public class doubly_linked_list_demo {
 		System.out.println(list);
 		list.printBackwards();
 		
-		list.reverse();
+//		list.reverse();
+//		
+//		System.out.println("Reversed list:"+list);
 		
-		System.out.println("Reversed list:"+list);
+		list.insertion_Sort();
+		
+		System.out.println("Insertion sorted list:"+list);
 
 	}
 
